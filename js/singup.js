@@ -8,7 +8,7 @@ signupForm.addEventListener('submit', (e)=>{
     const Users = JSON.parse(localStorage.getItem('users')) || []
     const isUserRegistered = Users.find(user => user.email === email)
     if(isUserRegistered){
-        return alert('El usuario ya esta registado!')
+        return alert('El usuario ya esta registrado!')
     }
 
     Users.push({name: name, email: email, password: password})
