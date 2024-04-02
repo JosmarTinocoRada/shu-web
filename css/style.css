@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&family=Sen:wght@400..800&display=swap');
+/* Utilidades */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+
+:root {
+    --negro: #000000;
+    --blanco: #fdfdfd;
+    --acentuar: #35048f;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-inline: 1.5rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.header {
+    background-color: var(--negro);
+    color: var(--blanco);
+    padding-block: 1rem;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+}
+.text-decoration {
+    text-decoration: none;
+    color: var(--blanco);
+  }
+  a:hover, a:focus {
+    text-decoration: none;
+    color: var(--blanco);
+  }
+/* Fin utilidades */
+.logo{
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+#busqueda {
+    padding: .5rem;
+}
+
+.main {
+    padding-block: 4rem;
+}
+
+.titulo {
+    margin-bottom: 1rem;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.producto {
+    background-color: var(--negro);
+    padding: .5rem;
+    border-radius: 1rem;
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+}
+
+.producto-img {
+    border-radius: .75rem;
+    height: 10rem;
+}
+
+.producto-btn {
+    border-radius: .75rem;
+    border: 0;
+    background-color: var(--acentuar);
+    color: var(--blanco);
+    padding: .5rem;
+    margin-top: .5rem;
+    cursor: pointer;
+    border: 2px solid var(--acentuar);
+    transition: .2s;
+}
+
+.producto-btn:hover {
+    background-color: var(--blanco);
+    color: var(--negro);
+    font-weight: 600;
+}
+
+.carrito-productos {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.carrito-producto {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--negro);
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    color: var(--blanco);
+}
+
+.carrito-producto-btn {
+    background-color: var(--blanco);
+    border: 0;
+    padding: .25rem;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+.d-none {
+    display: none;
+}
+.limpiar-carrito{
+    border-color: aquamarine;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: var(--negro);
+    color: var(--blanco);
+    padding-block: 2rem;
+    margin-top: auto;
+}
+
+.formulario-de-usuario{
+    display:flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.formulario-de-usuario h1{
+    font-size: 3em;
+}
+
+.formulario-de-usuario h2{
+    text-align:center;
+    width: 100%;
+    margin-bottom: 1em;
+    font-size: 2.5em
+}
+
+.formulario-de-usuario form{
+    padding: 1.5em;
+    display:flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+    border-radius: 20px;
+    border: 2px solid rgba(0,0,0,.1);
+}
+
+.formulario-de-usuario form label{
+    width: 100%;
+    padding: 0.2em;
+    margin-bottom: 0.5em;
+}
+
+.formulario-de-usuario form input{
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 0.8em;
+    border-radius: 9px;
+    border: none;
+    outline-color: #003DFF;
+    background-color: #eee;
+}
+
+.formulario-de-usuario form input[type='submit']{
+    margin-top: 1.5em;
+    background-color: #003DFF;
+    color: #fff;
+    font-family: var(--font-mono);
+    transition: var(--transition);
+} 
+
+.formulario-de-usuario form input[type='submit']:active{
+    transform: scale(0.97);
+}
+
+.formulario-de-usuario p{
+    margin-top: 1.5em;
+
+}
+
+
+.formulario-de-usuario p a{
+    text-decoration: none;
+    color: #003DFF;
+}
+
+.formulario-de-usuario button{
+    background-color: #003DFF;
+    color: #fff;
+    font-family: var(--font-mono);
+    transition: var(--transition);
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 9px;
+    margin-top: 1.5em;
+    font-size: 1em;
+}

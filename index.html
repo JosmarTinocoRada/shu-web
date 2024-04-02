@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuweb</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/sh.png">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo"><h1>Shuweb Shop</h1></a>
+            <nav class="barra">
+                <ul class="navegacion">
+                   <li class="navegacion__enlace"><a class="text-decoration" href="signup.html">Sing In</a></li>
+                  <li class="navegacion__enlace"><a class="text-decoration" href="login.html">Login</a></li>
+                  <button id="logout">Logout</button>
+                </ul>
+                </nav>
+        </div>
+    </header>
+    <main clas="main">
+        <section class="container">
+            <h2 class="titulo">Productos</h2>
+            <div class="productos" id="productos">
+            </div>
+        </section>
+        <section class="container">
+            <h2 class="titulo">Carrito</h2>
+            <div class="carrito">
+                <div id="carrito-vacio">
+                    <h4>Carrito Vació.</h4>
+                </div>
+                <div class="carrito-productos" id="carrito-productos">
+                </div>
+                <div class="carrito-total">
+                    <h2>Total: <span id="carrito-total">$0</span></h2>
+                </div>
+                <button id="vaciar" class="limpiar-carrito">Limpiar carrito</button>
+            </div>
+        </section>
+        <section class="container">
+            <h2 class="titulo">Pedido</h2>
+            <div id="pedido-section" style="display: none;">
+                <label for="dias-entrega">Días para la entrega:</label>
+                <input type="number" id="dias-entrega" min="1" max="30">
+                <p id="dias-entrega-mostrar"></p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <h2>ShuWeb</p>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
