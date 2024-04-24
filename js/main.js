@@ -1,22 +1,28 @@
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-const productos = [
-    { id: "landing-page", titulo: "Landing Page", precio: 1450, img: "./img/landing.png" },
-    { id: "web-estatica", titulo: "Static Web", precio: 750, img: "./img/estatica.webp" },
-    { id: "responsive-page", titulo: "Responsive Page", precio: 3000, img: "./img/responsive.jpg" },
-    { id: "e-commerce", titulo: "E-commerce", precio: 11000, img: "./img/ecommerce.png" },
-    { id: "app-web", titulo: "App Web", precio: 8000, img: "./img/appweb.jpg" },
-];
+
 
 const cargarProductos = () => {
-    const contenedorProductos = document.querySelector("#productos");
-    contenedorProductos.innerHTML = productos.map(producto => `
-        <div class="producto">
-            <img class="producto-img" src="${producto.img}">
-            <h3>${producto.titulo}</h3>
-            <p>$${producto.precio}</p>
-            <button class="producto-btn" onclick="agregarAlCarrito('${producto.id}')">Agregar al carrito</button>
-        </div>
-    `).join('');
+    fetch('/datos/productos.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al cargar los productos');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const contenedorProductos = document.querySelector("#productos");
+            contenedorProductos.innerHTML = data.map(producto => `
+                <div class="producto">
+                    <img class="producto-img" src="${producto.img}">
+                    <h3>${producto.titulo}</h3>
+                    <p>$${producto.precio}</p>
+                    <button class="producto-btn" onclick="agregarAlCarrito('${producto.id}')">Agregar al carrito</button>
+                </div>
+            `).join('');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
 cargarProductos();
 
@@ -49,12 +55,35 @@ const modificarCantidad = (id, cantidad) => {
 }
 
 const agregarAlCarrito = (id) => {
-    const producto = productos.find(item => item.id === id);
-    const carritoProducto = carrito.find(item => item.id === id);
-    if (carritoProducto) modificarCantidad(id, 1);
-    else carrito.push({ ...producto, cantidad: 1 });
-    actualizarCarrito();
+    fetch('/datos/productos.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al cargar los productos');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const producto = data.find(item => item.id === id);
+            const carritoProducto = carrito.find(item => item.id === id);
+            if (carritoProducto) modificarCantidad(id, 1);
+            else carrito.push({ ...producto, cantidad: 1 });
+            actualizarCarrito();
+
+            Toastify({
+                text: "Producto agregado al carrito",
+                duration: 3000,
+                style: {
+                  background: "linear-gradient(to right, #35048f, #000000)",
+                  color: "#fdfdfd",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
+
 
 
 const vaciarCarrito = () => {

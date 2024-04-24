@@ -1,0 +1,7 @@
+[
+    { "id": "landing-page", "titulo": "Landing Page", "precio": 1450, "img": "./img/landing.png" },
+    { "id": "web-estatica", "titulo": "Static Web", "precio": 750, "img": "./img/estatica.webp" },
+    { "id": "responsive-page", "titulo": "Responsive Page", "precio": 3000, "img": "./img/responsive.jpg" },
+    { "id": "e-commerce", "titulo": "E-commerce", "precio": 11000, "img": "./img/ecommerce.png" },
+    { "id": "app-web", "titulo": "App Web", "precio": 8000, "img": "./img/appweb.jpg" }
+]
