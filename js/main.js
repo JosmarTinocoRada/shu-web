@@ -2,7 +2,7 @@ const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 
 const cargarProductos = () => {
-    fetch('/datos/productos.json')
+    fetch('../datos/productos.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error al cargar los productos');
@@ -55,7 +55,7 @@ const modificarCantidad = (id, cantidad) => {
 }
 
 const agregarAlCarrito = (id) => {
-    fetch('/datos/productos.json')
+    fetch('../datos/productos.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error al cargar los productos');
