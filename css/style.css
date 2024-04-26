@@ -19,7 +19,7 @@
         width: min(80%, 60rem);
         margin: 0 auto;
       }
-      
+
 .container {
         max-width: 1000px;
         margin: 0 auto;
@@ -82,6 +82,8 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     color: var(--blanco);
   }
+
+  
 /* Fin utilidades */
 
 #busqueda {
@@ -164,7 +166,7 @@ h1, h2, h3, h4, h5, h6 {
 .d-none {
     display: none;
 }
-.limpiar-carrito{
+.boton{
     border-color: aquamarine;
     border-radius: 1rem;
     cursor: pointer;
